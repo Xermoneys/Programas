@@ -22,4 +22,9 @@ int main(void)
     }
     printf("T%i = %i\n", N, print);
     return 0;
+    for (size_t i = 0; i < count; i++)
+    {
+        /* code */
+    }
+    
 } 
