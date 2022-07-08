@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int calculaT(int valorIn)
+int calculaT(int valorIn);
 
-void menu()
+void menu();
 
 int main(void)
 {
@@ -22,6 +22,7 @@ int main(void)
                 printf("Digite um número (0 < n < 10^8): \n");
                 scanf("%i", &N);
             } while (N < 0);
+            printf("%i\n", N, calculaT(N));
             break;
         case 2:
             return 0;
@@ -33,26 +34,29 @@ int main(void)
     }
     return 0;
 }
+
 void menu()
-    {
-        printf("  1) Escolha o número para a sequência\n");
-        printf("  2) Sair\n");
-        printf("Digite a opção desejada: ");
-    }
+ {
+     printf("  1) Escolha o número para a sequência\n");
+     printf("  2) Sair\n");
+     printf("Digite a opção desejada: ");
+}
 
 int calculaT(int valorIn)
 {
     int i = 0;
     int a = 2, b = 3, c = 5, d = 7;
     int print = 87;
-    for ( i = 0; i <= valorIn; i++)
     {
-        print = a^2 + b^2 + c^2 + d^2;
-        d = c;
-        c = b;
-        b = a; 
-        d = print;
-    }  
+    for ( i = 0; i <= valorIn; i++)
+        {
+            print = a^2 + b^2 + c^2 + d^2;
+            d = c;
+            c = b;
+            b = a; 
+            d = print;
+        }  
         return print;
+    }
 }
 
