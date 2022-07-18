@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include <math.h>
+#define TRUE 1
+#define FALSE 0
 
-int calculaT(int valorIn);
 
 void menu();
+int isPrime(int num);
 
 int main(void)
 {
@@ -22,19 +25,18 @@ int main(void)
                 printf("Digite um número (0 < n < 10^8): \n");
                 scanf("%i", &N);
             } while (N < 0);
-            printf("%i\n", N, calculaT(N));
-            break;
-        case 2:
-            return 0;
+
+            printf("%i\n", N);
             break;
         default:
             break;
         }
-        printf("\n");
+        printf("\n"); 
     }
     return 0;
 }
 
+/*  */
 void menu()
  {
      printf("  1) Escolha o número para a sequência\n");
@@ -42,21 +44,17 @@ void menu()
      printf("Digite a opção desejada: ");
 }
 
-int calculaT(int valorIn)
-{
-    int i = 0;
-    int a = 2, b = 3, c = 5, d = 7;
-    int print = 87;
-    {
-    for ( i = 0; i <= valorIn; i++)
-        {
-            print = a^2 + b^2 + c^2 + d^2;
-            d = c;
-            c = b;
-            b = a; 
-            d = print;
-        }  
-        return print;
-    }
+/**
+ * Essa função checa números primos
+ * @param num numero a ser checado
+ * @return TRUE para primos, FALSE para não primos
+ */
+int isPrime(int num){
+    int i;
+    if(num < 2)
+        return FALSE;
+    for (i = 2; i <= sqrt(num); i++)
+        if(num % i == 0)
+            return FALSE;
+    return TRUE;
 }
-
