@@ -1,24 +1,20 @@
 #include<stdio.h>
-#include <locale.h>
- 
-int main() {
- setlocale(LC_ALL, "");
- int num, i, resultado = 0;
- 
- printf("Digite um número: ");
- scanf("%d", &num);
- 
- for (i = 2; i <= num / 2; i++) {
-    if (num % i == 0) {
-       resultado++;
-       break;
-    }
- }
- 
- if (resultado == 0)
-    printf("%d é um número primo\n", num);
- else
-    printf("%d não é um número primo\n", num);
- 
- return 0;
+#include <math.h>
+
+int main() 
+{
+int calculaT(int valorT)
+{
+    int i = 2;
+    int w = 2, x = 3, y = 5, z = 7;
+    int resultado = 0;
+   for ( i = 0; i <= valorT ; i++)
+   {
+        resultado = w*w + x*x + y*y + z*z; 
+        z = y;
+        y = x;
+        x = w;
+        w = resultado;
+   }
+}
 }

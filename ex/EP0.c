@@ -82,3 +82,4 @@ int calculaT(int valorIn)
         return print;
     }
 }
+
